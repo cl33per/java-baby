@@ -1,8 +1,11 @@
-string = "world"
+import random
 
-def solution(string):
-    stringlen = len(string)
-    slicedstrg = string[stringlen::-1]
+string = ["Torie","Enos","Charyl","Bidget","Jermayne","Chauncey","Nadia","Callean","Zak","Corrine","Kaylee","Jojo"]
+randomString = random.choice(string)
+
+def solution(randomString):
+    stringlen = len(randomString)
+    slicedstrg = randomString[stringlen::-1]
     return (slicedstrg)
     
-print solution(string)
+print solution(randomString)
