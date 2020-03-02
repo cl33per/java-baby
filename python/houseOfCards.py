@@ -5,8 +5,8 @@ class Card:
         self.suit = suit
         self.value = val
 
-    def show(self):
-        print ("{} of {}".format(self.value,self.suit))
+    def show(self,name):
+        print ("{} has {} of {}".format(name, self.value,self.suit))
 
 class Deck:
     def __init__(self):
@@ -15,7 +15,7 @@ class Deck:
 
     def build(self):
         for s in["Spades","Clubs","Hearts","Diamonds"]:
-            for v in range(1,14):
+            for v in ["2","3","4","5","6","7","8","9","J","Q","K","A"]:
                 self.cards.append(Card(s,v))
 
     def show(self):
@@ -30,7 +30,6 @@ class Deck:
     def drawCard(self):
         return self.cards.pop()
 
-
 class Player:
     def __init__(self, name):
         self.name = name
@@ -42,11 +41,26 @@ class Player:
 
     def showHand(self):
         for card in self.hand:
-            card.show()
-            
-deck = Deck()
-deck.shuffle()
+            card.show(self.name)
+class Game:
+    deck = Deck()
+    deck.shuffle()
 
-bob = Player("Bob")
-bob.draw(deck)
-bob.showHand()
+    def playGame(self):
+        numberOfPlayers = int(input("Number of Players?: "))
+        playersCounter = 0
+        playerList = []
+
+        while playersCounter < numberOfPlayers:
+            name = raw_input("Enter Player Name: ")
+            playerList.append(Player(name))
+            playersCounter = playersCounter + 1 
+            
+        for player in playerList:
+            player.draw(self.deck)
+            player.showHand()
+            
+
+# Suffle deck before assigning players 
+game = Game()
+game.playGame()
