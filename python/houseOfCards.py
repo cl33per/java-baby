@@ -42,7 +42,6 @@ class Player:
     def showHand(self):
         for card in self.hand:
             card.show(self.name)
-
 class Game:
     deck = Deck()
     deck.shuffle()
@@ -59,14 +58,8 @@ class Game:
             
         for player in playerList:
             player.draw(self.deck)
-            player.draw(self.deck)
-            player.draw(self.deck)
-            player.draw(self.deck)
-            player.draw(self.deck)
             player.showHand()
-
-        def getPlayers():
-            pass
+            
 
 # Suffle deck before assigning players 
 game = Game()
