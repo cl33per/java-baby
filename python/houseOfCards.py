@@ -15,7 +15,7 @@ class Deck:
 
     def build(self):
         for s in["Spades","Clubs","Hearts","Diamonds"]:
-            for v in range(1,14):
+            for v in ["2","3","4","5","6","7","8","9","J","Q","K","A"]:
                 self.cards.append(Card(s,v))
 
     def show(self):
@@ -30,7 +30,6 @@ class Deck:
     def drawCard(self):
         return self.cards.pop()
 
-
 class Player:
     def __init__(self, name):
         self.name = name
@@ -43,10 +42,19 @@ class Player:
     def showHand(self):
         for card in self.hand:
             card.show()
-            
+
+# Suffle deck before assigning players 
 deck = Deck()
 deck.shuffle()
 
 bob = Player("Bob")
 bob.draw(deck)
 bob.showHand()
+
+jerry = Player("Jerry")
+jerry.draw(deck)
+jerry.showHand()
+
+dave = Player("Dave")
+dave.draw(deck)
+dave.showHand()
