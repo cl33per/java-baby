@@ -5,8 +5,8 @@ class Card:
         self.suit = suit
         self.value = val
 
-    def show(self):
-        print ("{} of {}".format(self.value,self.suit))
+    def show(self,name):
+        print ("{} has {} of {}".format(name, self.value,self.suit))
 
 class Deck:
     def __init__(self):
@@ -41,20 +41,26 @@ class Player:
 
     def showHand(self):
         for card in self.hand:
-            card.show()
+            card.show(self.name)
+class Game:
+    deck = Deck()
+    deck.shuffle()
+
+    def playGame(self):
+        numberOfPlayers = int(input("Number of Players?: "))
+        playersCounter = 0
+        playerList = []
+
+        while playersCounter < numberOfPlayers:
+            name = raw_input("Enter Player Name: ")
+            playerList.append(Player(name))
+            playersCounter = playersCounter + 1 
+            
+        for player in playerList:
+            player.draw(self.deck)
+            player.showHand()
+            
 
 # Suffle deck before assigning players 
-deck = Deck()
-deck.shuffle()
-
-bob = Player("Bob")
-bob.draw(deck)
-bob.showHand()
-
-jerry = Player("Jerry")
-jerry.draw(deck)
-jerry.showHand()
-
-dave = Player("Dave")
-dave.draw(deck)
-dave.showHand()
+game = Game()
+game.playGame()
