@@ -56,11 +56,21 @@ class Game:
             playerList.append(Player(name))
             playersCounter = playersCounter + 1 
             
-        for player in playerList:
-            player.draw(self.deck)
-            player.showHand()
-            
+        for players in playerList:
+            players.draw(self.deck) 
+            players.showHand()
+            # print (playerList[players])
+
+        # for players in range(len(playerList)):
+        #     print (playerList[players])
+        
+
+    def compareCards(self):
+        a = [1, 2, 3, 4, 5] 
+        for x in range(len(a)):
+            print (a[x],) 
 
 # Suffle deck before assigning players 
 game = Game()
 game.playGame()
+# game.compareCards()
