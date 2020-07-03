@@ -6,4 +6,4 @@ def rolldice(dieSides):
     diceroll = dieSides[randint(0,5)]
     return diceroll
 
-print rolldice(dieSides)
+print (f'{rolldice(dieSides)}')
