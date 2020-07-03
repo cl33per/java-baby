@@ -20,16 +20,16 @@ def push(stack, item):
 # Python list ADT has a function called pop, when called with no parameters, it returns the last
 # item in the list. This is the behavior we want from the stack.
 def remove(stack):
-  stack.pop()
+  return stack.pop()
 
 # This function takes the stack as an input. It checks to see if the stack is empty
 # and returns True if it is empty and False if it is not empty. You can use the Python built-n
 # function len to get the length of the list. If it is 0, the stack is empty.
 def isEmpty(stack):
   if len(stack) != 0:
-    return True
-  else:
     return False
+  else:
+    return True
 
 # Document your module using comments that list each function and briefly describes what input
 # the function needs (preconditions) and what the function returns (the postcondition).
