@@ -14,13 +14,13 @@ def insert(queue, item):
 # The built-in Python list ADT pop function can again be used, except, pass it a parameter of 0 and
 # it will return the item at the beginning of the list rather than from the end of the list
 def remove(queue):
-  queue.pop(0)
+  return queue.pop(0)
 
 # This function takes the queue as an input. It checks to see if the queue is
 # empty and returns True if it is empty and False if it is not empty. You can use the Python built-n
 # function len to get the length of the list. If it is 0, the queue is empty.
 def isEmpty(queue):
   if len(queue) != 0:
-    return True
-  else:
     return False
+  else:
+    return True
