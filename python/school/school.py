@@ -98,6 +98,30 @@ def main():
 
     # Create a student object with specific student information
     newStudent = Student(name, studentId, semester, semesterYear)
+
+    # Test function for Student Object
+    testStudentFunction(newStudent)
+    # END REGION
+
+    # Courses Region
+
+    # 1. Create a course number with information for a specific course
+    courseNumber = input('Enter course number:')
+    courseName = input('Enter course name:')
+    creditHours = input('Enter course number:')
+    # 2. Call the print function to verify that your __str__ method is working correctly
+    newCourse = Course(courseNumber, courseName, creditHours)
+   # Test function for Course Object
+    testCourseFunction(newCourse, creditHours)
+    # END Region
+
+def programIntroduction():
+    print('Welcome to the School Transcripts Program\n')
+    print('Enter a make model and year of your choice.')
+
+
+
+def testStudentFunction(newStudent):
     # 2. Call the print function and to verify that your __str__ function is working correctly
     print(f'{newStudent}')
     # # 3. Call the setGPA() function and pass it a valid gpa value
@@ -112,17 +136,8 @@ def main():
     returnvalGPA = newStudent.getGPA()
     print(f'Return val GPA: {returnvalGPA}')
 
-    # END REGION
-
-    # Courses Region
-
-    # 1. Create a course number with information for a specific course
-    courseNumber = input('Enter course number:')
-    courseName = input('Enter course name:')
-    creditHours = input('Enter course number:')
-    # 2. Call the print function to verify that your __str__ method is working correctly
-    newCourse = Course(courseNumber, courseName, creditHours)
-    # 3. Call the getCreditHours method and verify that the credit hours variable is set correctly
+def testCourseFunction(newCourse, creditHours):
+     # 3. Call the getCreditHours method and verify that the credit hours variable is set correctly
     testCreditHours = newCourse.getCreditHours(creditHours)
     # 4. Call the setGrade method and pass it a valid letter grade
     testSetGradePass = newCourse.setGrade("A")
@@ -134,18 +149,12 @@ def main():
     testSetGradeFail = newCourse.setGrade("G")
     # 7. Verify that the error message appears
     print(f'GradeFail: {testSetGradeFail}')
-    print(f'Points:{returnValGetPoints}')
     # 8. Call getGrade and verify that the grade has been set to ‘I’
     testGetGrade = newCourse.getGrade()
     print(f'GradeClear: {testGetGrade}')
     # 9. Call getPoints and verify that the point value is 0
     returnValGetPoints = newCourse.getPoints()
     print(f'Points:{returnValGetPoints}')
-    # END Region
-
-def programIntroduction():
-    print('Welcome to the School Transcripts Program\n')
-    print('Enter a make model and year of your choice.')
 
 if __name__ == '__main__':
     main()
