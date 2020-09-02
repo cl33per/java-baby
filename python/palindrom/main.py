@@ -52,5 +52,8 @@ def main():
 def programIntroduction():
   print("Welcome to the Palindrom Program \n ")
   print("Test Cases are as follows: ")
-  print("dad, sad, bob, mom, mommy, car, racecar: ")
-  print("dad is a palindrome,\n sad is not a palindrome,\nbob is a palindrome,\nmom is a palindrome,\nmommy is not a palindrome,\ncar is not a palindrome,\nracecar is a palindrome: ")
+  # print("dad, sad, bob, mom, mommy, car, racecar: ")
+  # print("dad is a palindrome,\n sad is not a palindrome,\nbob is a palindrome,\nmom is a palindrome,\nmommy is not a palindrome,\ncar is not a palindrome,\nracecar is a palindrome: ")
+
+if __name__ == '__main__':
+  main()
